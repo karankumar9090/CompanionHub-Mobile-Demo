@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompanionHub - साथी ढूँढें</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* सामान्य स्टाइलिंग और रिस्पॉन्सिव बेस */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            width: 95%; /* मोबाइल के लिए ज़्यादा चौड़ाई */
+            max-width: 600px; /* मोबाइल पर ज़्यादा बड़ा न हो */
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        /* हेडर */
+        header {
+            background-color: #4CAF50; /* हरा रंग */
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 0.9em;
+        }
+
+        /* सर्च और फ़िल्टर बार */
+        .filter-bar {
+            display: flex;
+            flex-direction: column; /* मोबाइल के लिए एक के नीचे एक */
+            gap: 10px;
+            margin-bottom: 25px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .filter-bar input, .filter-bar select, .filter-bar button {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box; /* पैडिंग को चौड़ाई के अंदर रखने के लिए */
+        }
+        .filter-bar button {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* लिस्टिंग ग्रिड (मोबाइल के लिए 1 कॉलम) */
+        .listing-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* मोबाइल में एक ही कॉलम */
+            gap: 20px;
+        }
+
+        /* प्रोफ़ाइल कार्ड */
+        .profile-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex; /* जानकारी को साथ में रखने के लिए */
+            margin-bottom: 10px;
+        }
+
+        .profile-img {
+            width: 120px; /* इमेज की चौड़ाई */
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            padding: 15px;
+            flex-grow: 1;
+        }
+        .profile-info h3 {
+            margin: 0 0 5px 0;
+            color: #4CAF50;
+            font-size: 1.4em;
+        }
+        .location {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        .rate {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        .rating {
+            color: gold;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .view-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* फुटर */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+            background-color: #ddd;
+            color: #555;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>CompanionHub</h1>
+            <nav>
+                <a href="#">लिस्ट करें</a>
+                <a href="#">लॉगिन</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>अपने लिए सही साथी ढूँढें</h2>
+
+        <div class="filter-bar">
+            <input type="text" placeholder="शहर, रुचि या नाम से खोजें...">
+            <select>
+                <option value="">लिंग</option>
+                <option value="gf">गर्लफ्रेंड</option>
+                <option value="bf">बॉयफ्रेंड</option>
+            </select>
+            <button>खोजें</button>
+        </div>
+
+        <div class="listing-grid">
+            <div class="profile-card">
+                <img src="https://via.placeholder.com/120x150.png?text=Mira" alt="मीरा की फोटो" class="profile-img">
+                <div class="profile-info">
+                    <h3>मीरा (Mira)</h3>
+                    <p class="location">मुंबई</p>
+                    <p class="rate">₹ 800 / घंटा</p>
+                    <div class="rating">⭐⭐⭐⭐⭐ (25)</div>
+                    <button class="view-btn">प्रोफ़ाइल देखें</button>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <img src="https://via.placeholder.com/120x150.png?text=Aryan" alt="आर्यन की फोटो" class="profile-img">
+                <div class="profile-info">
+                    <h3>आर्यन (Aryan)</h3>
+                    <p class="location">दिल्ली</p>
+                    <p class="rate">₹ 750 / घंटा</p>
+                    <div class="rating">⭐⭐⭐⭐ (18)</div>
+                    <button class="view-btn">प्रोफ़ाइल देखें</button>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <img src="https://via.placeholder.com/120x150.png?text=Neha" alt="नेहा की फोटो" class="profile-img">
+                <div class="profile-info">
+                    <h3>नेहा (Neha)</h3>
+                    <p class="location">बेंगलुरु</p>
+                    <p class="rate">₹ 900 / घंटा</p>
+                    <div class="rating">⭐⭐⭐⭐⭐ (40)</div>
+                    <button class="view-btn">प्रोफ़ाइल देखें</button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>⚠️ यह एक डेमो है। कानूनी सलाह के बाद ही असली प्रोजेक्ट पर काम करें। &copy; 2025 CompanionHub.</p>
+    </footer>
+
+</body>
+                  </html>
+                  
